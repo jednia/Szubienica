@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZJc-lH-JaI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start Controller-->
+        <scene sceneID="8et-qx-XhT">
+            <objects>
+                <viewController id="ZJc-lH-JaI" customClass="StartController" customModule="Szubienica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qZy-Pd-PKo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Szubienica" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvc-vJ-0bv">
+                                <rect key="frame" x="50" y="227" width="314" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="amE-QX-nXg"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bM6-oe-DZQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-h3-LSG">
+                                <rect key="frame" x="107" y="344" width="200" height="80"/>
+                                <color key="backgroundColor" red="0.85872977969999997" green="0.85887759919999995" blue="0.85872042179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="NTg-Kq-Ef9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="ywI-my-US0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Graj">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="ZJc-lH-JaI" eventType="touchUpInside" id="bxH-PH-6fg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="18q-hc-JSK"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="18q-hc-JSK" firstAttribute="trailing" secondItem="iLC-h3-LSG" secondAttribute="trailing" constant="107" id="4Nd-mx-vQB"/>
+                            <constraint firstItem="iLC-h3-LSG" firstAttribute="leading" secondItem="18q-hc-JSK" secondAttribute="leading" constant="107" id="TRC-db-STh"/>
+                            <constraint firstItem="18q-hc-JSK" firstAttribute="trailing" secondItem="dvc-vJ-0bv" secondAttribute="trailing" constant="50" id="hvT-pS-MHV"/>
+                            <constraint firstItem="iLC-h3-LSG" firstAttribute="top" secondItem="dvc-vJ-0bv" secondAttribute="bottom" constant="7" id="kV8-Bx-aVQ"/>
+                            <constraint firstItem="dvc-vJ-0bv" firstAttribute="top" secondItem="18q-hc-JSK" secondAttribute="top" constant="183" id="vqP-Ap-RLk"/>
+                            <constraint firstItem="dvc-vJ-0bv" firstAttribute="leading" secondItem="18q-hc-JSK" secondAttribute="leading" constant="50" id="whd-fF-cEP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playLook" destination="iLC-h3-LSG" id="bNv-Tl-ug4"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToGame" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="NoA-vR-0ti"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IL1-a3-GDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594.20289855072474" y="41.517857142857139"/>
+        </scene>
+        <!--Game Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="Szubienica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xok-Kc-xgS">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZP-T8-bAM" userLabel="View Image">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="350"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w0" translatesAutoresizingMaskIntoConstraints="NO" id="o6Z-Vq-dAQ" userLabel="Current Image">
+                                                <rect key="frame" x="0.0" y="33.5" width="374" height="283"/>
+                                                <color key="tintColor" name="KolorBlack-&gt;White"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="283" id="lcr-Ia-qvN"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="o6Z-Vq-dAQ" secondAttribute="trailing" id="8lC-4D-OAd"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="350" id="Goy-PF-2eM"/>
+                                            <constraint firstItem="o6Z-Vq-dAQ" firstAttribute="leading" secondItem="NZP-T8-bAM" secondAttribute="leading" id="aVO-HH-NAt"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="283" id="bnb-Ox-nGb"/>
+                                            <constraint firstItem="o6Z-Vq-dAQ" firstAttribute="centerY" secondItem="NZP-T8-bAM" secondAttribute="centerY" id="ef5-Ij-shp"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-Ev-Hk6" userLabel="View Question/Info">
+                                        <rect key="frame" x="0.0" y="351" width="374" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FrT-CN-NNP" userLabel="label Question/Info">
+                                                <rect key="frame" x="150.5" y="2" width="73.5" height="96"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                <color key="textColor" name="KolorBlack-&gt;White"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orF-JL-KFK" userLabel="restart">
+                                                <rect key="frame" x="2" y="28" width="45" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="DmG-aY-ier"/>
+                                                    <constraint firstAttribute="height" constant="45" id="Ixb-l4-gkF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="tintColor" name="KolorBlack-&gt;White"/>
+                                                <state key="normal" backgroundImage="arrow.clockwise.circle" catalog="system">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PMK-IO-cxi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqJ-3b-bIv" userLabel="next">
+                                                <rect key="frame" x="327" y="28" width="45" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="aQX-Cb-UoJ"/>
+                                                    <constraint firstAttribute="height" constant="45" id="wDO-k0-qp6"/>
+                                                </constraints>
+                                                <color key="tintColor" name="KolorBlack-&gt;White"/>
+                                                <state key="normal" backgroundImage="arrow.forward.circle" catalog="system">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEQ-l7-mE8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="orF-JL-KFK" firstAttribute="centerY" secondItem="Inh-Ev-Hk6" secondAttribute="centerY" id="27W-qG-yMg"/>
+                                            <constraint firstItem="FrT-CN-NNP" firstAttribute="centerY" secondItem="Inh-Ev-Hk6" secondAttribute="centerY" id="2ga-Mu-Vzr"/>
+                                            <constraint firstItem="FrT-CN-NNP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Inh-Ev-Hk6" secondAttribute="leading" id="6OP-jy-TFf"/>
+                                            <constraint firstItem="FrT-CN-NNP" firstAttribute="top" secondItem="Inh-Ev-Hk6" secondAttribute="top" constant="2" id="AiP-aD-RDe"/>
+                                            <constraint firstItem="TqJ-3b-bIv" firstAttribute="centerY" secondItem="Inh-Ev-Hk6" secondAttribute="centerY" id="Sou-k2-beh"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="dLE-c6-9E7"/>
+                                            <constraint firstItem="orF-JL-KFK" firstAttribute="leading" secondItem="Inh-Ev-Hk6" secondAttribute="leading" constant="2" id="kvm-RT-8pC"/>
+                                            <constraint firstItem="FrT-CN-NNP" firstAttribute="centerX" secondItem="Inh-Ev-Hk6" secondAttribute="centerX" id="ns0-hA-Vts"/>
+                                            <constraint firstAttribute="bottom" secondItem="FrT-CN-NNP" secondAttribute="bottom" constant="2" id="oIx-d9-5lO"/>
+                                            <constraint firstAttribute="trailing" secondItem="TqJ-3b-bIv" secondAttribute="trailing" constant="2" id="qWF-fT-8op"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="rir-0Y-Xvs"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FrT-CN-NNP" secondAttribute="trailing" id="tIt-uk-rpH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfz-iA-7wR" userLabel="View Answer">
+                                        <rect key="frame" x="0.0" y="452" width="374" height="95"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="tff-x9-yJ3" userLabel="label Answer">
+                                                <rect key="frame" x="139" y="2" width="96.5" height="91"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="32"/>
+                                                <color key="textColor" name="KolorBlack-&gt;White"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tff-x9-yJ3" firstAttribute="centerY" secondItem="Wfz-iA-7wR" secondAttribute="centerY" id="9bH-SS-MZC"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="ENf-fK-NyN"/>
+                                            <constraint firstItem="tff-x9-yJ3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wfz-iA-7wR" secondAttribute="leading" id="HnY-Vq-yQc"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tff-x9-yJ3" secondAttribute="trailing" id="L4F-wo-bQF"/>
+                                            <constraint firstAttribute="bottom" secondItem="tff-x9-yJ3" secondAttribute="bottom" constant="2" id="MV0-ON-kuF"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="95" id="bnY-Ey-QQH"/>
+                                            <constraint firstItem="tff-x9-yJ3" firstAttribute="top" secondItem="Wfz-iA-7wR" secondAttribute="top" constant="2" id="gsT-ic-T7d"/>
+                                            <constraint firstItem="tff-x9-yJ3" firstAttribute="centerX" secondItem="Wfz-iA-7wR" secondAttribute="centerX" id="waC-8e-1UH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53j-Cx-HgG" userLabel="View Keyboard">
+                                        <rect key="frame" x="0.0" y="548" width="374" height="270"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="6Pg-WK-BmQ" userLabel="Stack View Klaw">
+                                                <rect key="frame" x="5" y="35" width="364" height="200"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7NO-BN-FO1">
+                                                        <rect key="frame" x="19" y="0.0" width="326" height="45"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuG-zR-gge" userLabel="A">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="A">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5g9-1M-GcB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-SJ-hGH" userLabel="Ą">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ą">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2jz-yG-mBI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wo2-gH-LFv" userLabel="B">
+                                                                <rect key="frame" x="74" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="B">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i3q-ij-7EJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxi-BY-coV" userLabel="C">
+                                                                <rect key="frame" x="111" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="C">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UrY-CC-Z3g"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba4-h1-nfY" userLabel="Ć">
+                                                                <rect key="frame" x="148" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ć">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IPQ-6h-qNC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nw1-nU-hTp" userLabel="D">
+                                                                <rect key="frame" x="185" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="D">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AGY-Uu-DL8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVd-Wq-xpf" userLabel="E">
+                                                                <rect key="frame" x="222" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="E">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Qu-Hc-Xbu"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnt-L1-drp">
+                                                                <rect key="frame" x="259" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ę">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cUp-CO-WSI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wem-0l-VJz">
+                                                                <rect key="frame" x="296" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="F">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0aW-eC-xxF"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="2U3-eq-aKW">
+                                                        <rect key="frame" x="19" y="52" width="326" height="45"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyQ-vG-Ozo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="G">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="57R-ip-y4o"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wZ-hv-cTd">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="H">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CAQ-oo-hLT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmp-2n-jYe">
+                                                                <rect key="frame" x="74" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="I">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s2o-3T-CXO"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZZ-5J-nyf">
+                                                                <rect key="frame" x="111" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="J">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYi-sO-Xc0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fu-Cf-glN">
+                                                                <rect key="frame" x="148" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="K">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="whc-ZU-CWq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lte-ts-MmR" userLabel="L">
+                                                                <rect key="frame" x="185" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="L">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="evd-3K-MdA"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP5-qM-yDu" userLabel="Ł">
+                                                                <rect key="frame" x="222" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ł">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wwj-oT-YPa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfn-Qc-HgP" userLabel="M">
+                                                                <rect key="frame" x="259" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="M">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7OC-fu-1DO"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r44-7D-UQz" userLabel="N">
+                                                                <rect key="frame" x="296" y="0.0" width="30" height="45"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="N">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V37-04-PCh"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-Db-0pX">
+                                                        <rect key="frame" x="19" y="104" width="326" height="44.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlT-G3-zJ3" userLabel="Ń">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ń">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOs-X0-VRK"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-4e-4Ym" userLabel="O">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="O">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEF-GJ-bsA"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ND-eM-awN" userLabel="Ó">
+                                                                <rect key="frame" x="74" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ó">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5K9-K0-uwE"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCj-Q4-MpI" userLabel="P">
+                                                                <rect key="frame" x="111" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="P">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AcO-Im-EH3"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4Y-WZ-TX7" userLabel="Q">
+                                                                <rect key="frame" x="148" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Q">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D9Y-Fk-0MP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKe-7b-nmV" userLabel="R">
+                                                                <rect key="frame" x="185" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="R">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIP-Om-ziJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mm-Ke-lDI" userLabel="S">
+                                                                <rect key="frame" x="222" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="S">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mDC-fz-G46"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIG-wd-88q" userLabel="Ś">
+                                                                <rect key="frame" x="259" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ś">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y51-rK-e2I"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLS-AK-dSr" userLabel="T">
+                                                                <rect key="frame" x="296" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="T">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jri-3Z-dam"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="N7W-f4-uMP">
+                                                        <rect key="frame" x="37.5" y="155.5" width="289" height="44.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXr-dO-vge" userLabel="U">
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="U">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZ8-PA-3Z0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgT-Fr-2R9">
+                                                                <rect key="frame" x="37" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="V">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKg-D9-oXS"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-9b-qq3" userLabel="W">
+                                                                <rect key="frame" x="74" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="W">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtY-qp-7kz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFE-9k-Bop">
+                                                                <rect key="frame" x="111" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="X">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BtZ-tS-bDU"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-u8-ppo" userLabel="Y">
+                                                                <rect key="frame" x="148" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Y">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAq-sl-7ha"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-7L-xoB">
+                                                                <rect key="frame" x="185" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Z">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W0h-oD-hNP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbl-IA-TZV" userLabel="Ź">
+                                                                <rect key="frame" x="222" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ź">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPz-JC-v6C"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKP-fi-eTD" userLabel="Ż">
+                                                                <rect key="frame" x="259" y="0.0" width="30" height="44.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                                                <state key="normal" title="Ż">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="choice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="675-P3-FwC"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="htx-OD-rRK"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6Pg-WK-BmQ" firstAttribute="centerY" secondItem="53j-Cx-HgG" secondAttribute="centerY" id="VDm-yk-uee"/>
+                                            <constraint firstItem="6Pg-WK-BmQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="53j-Cx-HgG" secondAttribute="leading" constant="5" id="c5X-LY-fIc"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="210" id="doj-IU-Ypo"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6Pg-WK-BmQ" secondAttribute="trailing" constant="5" id="kXz-JK-TMm"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="270" id="tpP-Pc-wZa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NZP-T8-bAM" firstAttribute="top" secondItem="Xok-Kc-xgS" secondAttribute="top" id="UvW-AD-xEt"/>
+                                    <constraint firstAttribute="bottom" secondItem="53j-Cx-HgG" secondAttribute="bottom" id="wtI-fP-FeM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="KolorWhite-&gt;Black"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xok-Kc-xgS" secondAttribute="trailing" id="8mZ-ev-WMd"/>
+                            <constraint firstItem="Xok-Kc-xgS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EFi-3m-6BM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xok-Kc-xgS" secondAttribute="bottom" id="N6I-WS-Rgt"/>
+                            <constraint firstItem="Xok-Kc-xgS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RWu-DU-voS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageCurrent" destination="o6Z-Vq-dAQ" id="ssN-22-QFm"/>
+                        <outlet property="labelAnswerGuess" destination="tff-x9-yJ3" id="Ap5-8r-GkB"/>
+                        <outlet property="labelQuestionAndInfo" destination="FrT-CN-NNP" id="tdi-aL-jBL"/>
+                        <outlet property="nextVisibility" destination="TqJ-3b-bIv" id="r7s-T8-Qo0"/>
+                        <outlet property="restartVisibility" destination="orF-JL-KFK" id="Jes-a4-AZL"/>
+                        <outletCollection property="keyboard" destination="cuG-zR-gge" collectionClass="NSMutableArray" id="ASZ-AG-dHw"/>
+                        <outletCollection property="keyboard" destination="L9e-SJ-hGH" collectionClass="NSMutableArray" id="kCl-BJ-gE4"/>
+                        <outletCollection property="keyboard" destination="Wo2-gH-LFv" collectionClass="NSMutableArray" id="IEv-iV-YtW"/>
+                        <outletCollection property="keyboard" destination="jxi-BY-coV" collectionClass="NSMutableArray" id="kEw-hg-1Yk"/>
+                        <outletCollection property="keyboard" destination="ba4-h1-nfY" collectionClass="NSMutableArray" id="xDM-C0-04g"/>
+                        <outletCollection property="keyboard" destination="nw1-nU-hTp" collectionClass="NSMutableArray" id="bVk-Rf-4dl"/>
+                        <outletCollection property="keyboard" destination="AVd-Wq-xpf" collectionClass="NSMutableArray" id="zu1-zO-EQo"/>
+                        <outletCollection property="keyboard" destination="cnt-L1-drp" collectionClass="NSMutableArray" id="l7s-j7-NxX"/>
+                        <outletCollection property="keyboard" destination="wem-0l-VJz" collectionClass="NSMutableArray" id="DuT-ru-CaG"/>
+                        <outletCollection property="keyboard" destination="eyQ-vG-Ozo" collectionClass="NSMutableArray" id="56E-dO-lKZ"/>
+                        <outletCollection property="keyboard" destination="9wZ-hv-cTd" collectionClass="NSMutableArray" id="2TS-U7-qhQ"/>
+                        <outletCollection property="keyboard" destination="mmp-2n-jYe" collectionClass="NSMutableArray" id="uOL-jl-AIw"/>
+                        <outletCollection property="keyboard" destination="DZZ-5J-nyf" collectionClass="NSMutableArray" id="pp2-HR-MqU"/>
+                        <outletCollection property="keyboard" destination="2fu-Cf-glN" collectionClass="NSMutableArray" id="GfA-XI-DUu"/>
+                        <outletCollection property="keyboard" destination="lte-ts-MmR" collectionClass="NSMutableArray" id="ng2-Tl-jnG"/>
+                        <outletCollection property="keyboard" destination="pP5-qM-yDu" collectionClass="NSMutableArray" id="N9X-Mz-aBe"/>
+                        <outletCollection property="keyboard" destination="Vfn-Qc-HgP" collectionClass="NSMutableArray" id="sre-kN-13x"/>
+                        <outletCollection property="keyboard" destination="r44-7D-UQz" collectionClass="NSMutableArray" id="UnF-FK-VNL"/>
+                        <outletCollection property="keyboard" destination="QlT-G3-zJ3" collectionClass="NSMutableArray" id="EV1-Jf-hXB"/>
+                        <outletCollection property="keyboard" destination="6eM-4e-4Ym" collectionClass="NSMutableArray" id="Yi9-Mi-Jd0"/>
+                        <outletCollection property="keyboard" destination="7ND-eM-awN" collectionClass="NSMutableArray" id="1qg-fl-puI"/>
+                        <outletCollection property="keyboard" destination="eCj-Q4-MpI" collectionClass="NSMutableArray" id="ehX-S1-0OQ"/>
+                        <outletCollection property="keyboard" destination="N4Y-WZ-TX7" collectionClass="NSMutableArray" id="sZ2-s8-awy"/>
+                        <outletCollection property="keyboard" destination="lKe-7b-nmV" collectionClass="NSMutableArray" id="dVt-M5-kRJ"/>
+                        <outletCollection property="keyboard" destination="9mm-Ke-lDI" collectionClass="NSMutableArray" id="CKD-7W-zme"/>
+                        <outletCollection property="keyboard" destination="FIG-wd-88q" collectionClass="NSMutableArray" id="ZwS-v0-EgB"/>
+                        <outletCollection property="keyboard" destination="tLS-AK-dSr" collectionClass="NSMutableArray" id="5MH-UV-lgg"/>
+                        <outletCollection property="keyboard" destination="UXr-dO-vge" collectionClass="NSMutableArray" id="lY8-mt-BzZ"/>
+                        <outletCollection property="keyboard" destination="SgT-Fr-2R9" collectionClass="NSMutableArray" id="SOE-Go-bKT"/>
+                        <outletCollection property="keyboard" destination="SP1-9b-qq3" collectionClass="NSMutableArray" id="wSo-dJ-veU"/>
+                        <outletCollection property="keyboard" destination="lFE-9k-Bop" collectionClass="NSMutableArray" id="KGB-mp-Cao"/>
+                        <outletCollection property="keyboard" destination="gkJ-u8-ppo" collectionClass="NSMutableArray" id="sjt-37-c5Q"/>
+                        <outletCollection property="keyboard" destination="Gep-7L-xoB" collectionClass="NSMutableArray" id="c6s-g3-sok"/>
+                        <outletCollection property="keyboard" destination="Nbl-IA-TZV" collectionClass="NSMutableArray" id="cWB-UO-yWp"/>
+                        <outletCollection property="keyboard" destination="ZKP-fi-eTD" collectionClass="NSMutableArray" id="bHK-Iy-spv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="41.517857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.forward.circle" catalog="system" width="128" height="121"/>
+        <image name="w0" width="1020" height="770"/>
+        <namedColor name="KolorBlack-&gt;White">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="KolorWhite-&gt;Black">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
